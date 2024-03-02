@@ -14,4 +14,17 @@ class SignUpForm(UserCreationForm):
 	def __init__(self,*args,**kwargs):
 		super(SignUpForm,self).__init__(*args,**kwargs)
 
-		self.fields['username']
+		self.fields['username'].widget.attrs['class'] = 'form_control'
+		self.fields['username'].widget.attrs['placeholder'] = 'User Name'
+		self.fields['username'].label =''
+		self.fields['username'].help_text = '<span class="form-text text-muted"><small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. </small></span>'
+
+		self.fields['password1'].widget.attrs['class'] = 'form_control'
+		self.fields['password1'].widget.attrs['placeholder'] = 'User Name'
+		self.fields['password1'].label =''
+		self.fields['password1'].help_text = '<ul class="form-text text-muted small"><li>Your password can\'t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can\'t be a commonly used password.</li><li>You password can\'t be entirely numeric.</li></ul>'
+
+		self.fields['username'].widget.attrs['class'] = 'form_control'
+		self.fields['username'].widget.attrs['placeholder'] = 'User Name'
+		self.fields['username'].label =''
+		self.fields['username'].help_text = '<span class="form-text text-muted"><small>Enter the same password above </small></span>'
