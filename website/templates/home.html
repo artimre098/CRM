@@ -3,11 +3,44 @@
 
 {% block content%}
 
-	<div class="col-md-6 offset-md-3">
+	
 		
 {% if user.is_authenticated %}		
+	
+		<h2>Employee Records</h2>
+		<table class="table table-hover table-bordered">
+			<thead class="thead-dark">
+				<tr class="table-secondary">
+					<th scope="col">ID</th>
+					<th scope="col">Employee Name</th>
+					<th scope="col">Email Address</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Address</th>
+					<th scope="col">Zipcode</th>
+					<th scope="col">Created</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% if records %}
+						{% for record in records %}
+							<tr>
+								<td scope="row">{{record.id}}</td>
+								<td>{{record.first_name}} {{record.last_name}}</td>
+								<td>{{record.email}}</td>
+								<td>{{record.phone}}</td>
+								<td>{{record.address}}, {{record.city}}</td>
+								<td>{{record.zipcode}}</td>
+								<td>{{record.created_at}}</td>
+							</tr>
+						{% endfor %}
+				{% endif %}
+				
+			</tbody>
+		</table>
+	
 
-<h1> Welcome User</h1>
+	
+	
 
 {% else %}
 		<h1>Login</h1>
@@ -27,6 +60,6 @@
 			  <button type="submit" class="btn btn-secondary">Login</button>
 			
 		</form>
-	</div>
+	
 {% endif %}
 {% endblock%}
