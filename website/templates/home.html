@@ -14,7 +14,7 @@
 					<th scope="col">ID</th>
 					<th scope="col">Employee Name</th>
 					<th scope="col">Email Address</th>
-					<th scope="col">Phone Number</th>
+					<th scope="col">Contact Number</th>
 					<th scope="col">Address</th>
 					<th scope="col">Zipcode</th>
 					<th scope="col">Created</th>
@@ -24,7 +24,11 @@
 				{% if records %}
 						{% for record in records %}
 							<tr>
-								<td scope="row">{{record.id}}</td>
+								<td scope="row">
+									<a href="{% url 'record' record.id %}" >
+										{{record.id}}
+									</a>
+								</td>
 								<td>{{record.first_name}} {{record.last_name}}</td>
 								<td>{{record.email}}</td>
 								<td>{{record.phone}}</td>
@@ -43,6 +47,7 @@
 	
 
 {% else %}
+	<div class="col-md-6 offset-md-3">
 		<h1>Login</h1>
 
 		<form method="POST" action="{% url 'home' %}">
@@ -60,6 +65,7 @@
 			  <button type="submit" class="btn btn-secondary">Login</button>
 			
 		</form>
+	</div>
 	
 {% endif %}
 {% endblock%}

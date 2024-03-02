@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <div class="col-md-8 offset-md-2">
+        <h2>Employee Record</h2>
+        <br /><br />
+        <div class="row mb-3">
+            <label for="colFormLabel" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="colFormLabel" value="{{employee_record.first_name}}">
+            </div>
+            <br /><br />
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="colFormLabel"  value="{{employee_record.last_name}}">
+            </div>
+            <br /><br />
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Email Address</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="colFormLabel"  value="{{employee_record.email}}">
+            </div>
+            <br /><br />
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Contact Number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="colFormLabel"  value="{{employee_record.phone}}">
+            </div>
+            <br /><br />
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="colFormLabel"  value="{{employee_record.address}}">
+            </div>
+            <br /><br />
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Zipcode</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="colFormLabel"  value="{{employee_record.zipcode}}">
+            </div>
+            <br /><br />
+            <div class="col-sm-10">
+                <a href="{% url 'home' %}"><button class="btn btn-secondary">Back</button></a>
+            </div>
+        </div>
+    </div>
+
+{% endblock%}

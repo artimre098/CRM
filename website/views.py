@@ -51,3 +51,13 @@ def register_user(request):
 		return render(request, 'register.html',{'form':form})
 	
 	return render(request, 'register.html',{'form':form})
+
+
+def employee_record(request,pk):
+	if request.user.is_authenticated:
+		#look up the record
+		employee_record = Record.objects.get(id=pk)
+		return render(request, 'record.html',{'employee_record':employee_record})
+	else:
+		messages.success(request,"You Must be Logged In to View That Page")
+		return redirect('home')
