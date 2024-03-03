@@ -61,3 +61,16 @@ def employee_record(request,pk):
 	else:
 		messages.success(request,"You Must be Logged In to View That Page")
 		return redirect('home')
+
+
+def delete_record(request,pk):
+	delete_it = Record.objects.get(id=pk)
+	
+	if request.user.is_authenticated:
+		delete_it.delete()
+		messages.success(request,"Employee Records has been deleted")
+		return redirect('home')
+	else:
+		messages.success(request,"You Must be Logged In to View That Page")
+		return redirect('home')
+	
