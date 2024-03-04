@@ -74,17 +74,26 @@ WSGI_APPLICATION = 'dcrm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME':'eldeco',
+#         'USER':'root',
+#         'PASSWORD': '',
+#         'HOST':'localhost',
+#         'PORT':'3306',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'eldeco',
-        'USER':'root',
-        'PASSWORD': '',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'railway',
+        'USER':'postgres',
+        'PASSWORD': 'efcE1*2efecfbee**5dBgFEA*3G2AAf*',
+        'HOST':'roundhouse.proxy.rlwy.net',
+        'PORT':'58939',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
