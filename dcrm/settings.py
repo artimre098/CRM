@@ -29,9 +29,9 @@ SECRET_KEY = 'django-insecure-)7v^w2bwk0t3-7m)bm9w-z-pay&elkt26t+b*5&dbnr16no@j3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','crm-production-32dc.up.railway.app']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','arl-crud-django.up.railway.app']
 
-CSRF_TRUSTED_ORIGINS = ['https://crm-production-32dc.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://arl-crud-django.up.railway.app']
 
 # Application definition
 
